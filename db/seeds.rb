@@ -27,3 +27,10 @@ end
   addy.save
 end
 
+60.times do 
+  fri = Friending.new
+  fri.friend_id = User.all.sample.id
+  fri.friender_id = User.all.sample.id
+  fri.save
+end
+

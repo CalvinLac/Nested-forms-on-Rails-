@@ -3,13 +3,12 @@
   <br>
   <%= u.email %>
   <% u.addresses.each do |addy| %>
+    <br>
     <%= addy.street %>
     <br>
     <%= addy.city %>
     <br>
     <%= addy.state %>
-    <br>
-    <%= addy.country %>
     <br>
   <%end%>
   <%= link_to "Edit", edit_user_path(u) %>
