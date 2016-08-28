@@ -10,18 +10,19 @@ class UsersController < ApplicationController
 
   def edit 
     @user = User.find(params[:id])
+    @user.addresses.build
   end
 
   def update
     @user = User.find(params[:id])
-    @user.update_attributes(my_params)
+    @user.update(my_params)
     redirect_to users_path
   end
 
   private
 
   def my_params
-    params.require(:user).permit(:username, :email)
+    params.require(:user).permit(:username, :email, :addresses_attributes => [:street, :city, :state])
   end
 
 end

@@ -2,6 +2,16 @@
   <%= u.username %>
   <br>
   <%= u.email %>
+  <% u.addresses.each do |addy| %>
+    <%= addy.street %>
+    <br>
+    <%= addy.city %>
+    <br>
+    <%= addy.state %>
+    <br>
+    <%= addy.country %>
+    <br>
+  <%end%>
   <%= link_to "Edit", edit_user_path(u) %>
   <br>
   <br>

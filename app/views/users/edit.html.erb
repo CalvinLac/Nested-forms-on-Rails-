@@ -5,5 +5,16 @@
   <%= user_fields.label :email %>
   <%= user_fields.text_field :email %>
   <br>
+  <%= user_fields.fields_for :addresses do |address_fields| %>
+    <%= address_fields.label :street %>
+    <%= address_fields.text_field :street %>
+
+    <%= address_fields.label :city %>
+    <%= address_fields.text_field :city %>
+
+    <%= address_fields.label :state %>
+    <%= address_fields.text_field :state %>
+  <% end %>
+  <br>
   <%= user_fields.submit %>
-<% end %>
+<%end%>
