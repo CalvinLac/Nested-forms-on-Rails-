@@ -8,29 +8,46 @@
 
 User.destroy_all
 Address.destroy_all
+Friending.destroy_all
+Computerpart.destroy_all
+Connectedpart.destroy_all
 
+
+# 50.times do
+# user = User.new
+# user.username = Faker::Name.name
+# user.email = Faker::Internet.email
+# user.save
+# end
+
+# 50.times do 
+#   addy = Address.new
+#   addy.street = Faker::Address.street_name
+#   addy.city = Faker::Address.city
+#   addy.state = Faker::Address.state
+#   addy.country = Faker::Address.country
+#   addy.user_id = User.all.sample.id
+#   addy.save
+# end
+
+# 60.times do 
+#   fri = Friending.new
+#   fri.friend_id = User.all.sample.id
+#   fri.friender_id = User.all.sample.id
+#   fri.save
+# end
 
 50.times do
-user = User.new
-user.username = Faker::Name.name
-user.email = Faker::Internet.email
-user.save
+  c = Computerpart.new
+  c.partname = Faker::App.name
+  c.description = Faker::Lorem.sentence
+  c.save
 end
 
-50.times do 
-  addy = Address.new
-  addy.street = Faker::Address.street_name
-  addy.city = Faker::Address.city
-  addy.state = Faker::Address.state
-  addy.country = Faker::Address.country
-  addy.user_id = User.all.sample.id
-  addy.save
-end
-
-60.times do 
-  fri = Friending.new
-  fri.friend_id = User.all.sample.id
-  fri.friender_id = User.all.sample.id
-  fri.save
-end
+60.times do
+  a = Connectedpart.new 
+  a.male_id = Computerpart.all.sample.id
+  a.female_id = Computerpart.all.sample.id
+  a.save
+end 
 
